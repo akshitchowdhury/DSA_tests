@@ -28,17 +28,31 @@ public class Two_sum {
 //
 //         }
 
-        for(int i=first; i< nums.length; i++){
+        for(int i=first; i< nums.length; i++)public int[] twoSum(int[] nums, int target) {
 
-            for(int j=last; j>first; j--){
-                if(nums[first]+nums[last]==target){
+            int[] store = new int[2];
 
-                    store[0] = first;
-                    store[1] = last;
+            //  Arrays.sort(nums);
 
+            int first =0;
+            int last = nums.length-1;
+
+            for(int i=first; i< nums.length-1; i++){
+
+                for(int j= 1; j<nums.length; j++){
+                    if(nums[i]+nums[j]==target && i!= j){
+
+                        store[0] = i;
+                        store[1] = j;
+                        break;
+
+                    }
                 }
+
             }
 
+
+            return store;
         }
 
 
